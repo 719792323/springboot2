@@ -1,0 +1,9 @@
+person:
+  name: wdj
+  age: 10
+
+spring:
+  mvc:
+#      static-path-pattern: /res/**
+  resources:
+    static-locations:  [classpath:/static_html/,classpath:/static/]

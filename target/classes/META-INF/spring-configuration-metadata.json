@@ -1,0 +1,38 @@
+{
+  "groups": [
+    {
+      "name": "address",
+      "type": "sj.springboot.learn.properties.Address",
+      "sourceType": "sj.springboot.learn.properties.Address"
+    },
+    {
+      "name": "person",
+      "type": "sj.springboot.learn.bean.Person",
+      "sourceType": "sj.springboot.learn.bean.Person"
+    }
+  ],
+  "properties": [
+    {
+      "name": "address.ip",
+      "type": "java.lang.String",
+      "sourceType": "sj.springboot.learn.properties.Address"
+    },
+    {
+      "name": "address.my-port",
+      "type": "java.lang.Integer",
+      "sourceType": "sj.springboot.learn.properties.Address",
+      "defaultValue": 0
+    },
+    {
+      "name": "person.age",
+      "type": "java.lang.String",
+      "sourceType": "sj.springboot.learn.bean.Person"
+    },
+    {
+      "name": "person.name",
+      "type": "java.lang.String",
+      "sourceType": "sj.springboot.learn.bean.Person"
+    }
+  ],
+  "hints": []
+}
