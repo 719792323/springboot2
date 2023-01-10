@@ -1,8 +1,7 @@
 package sj.springboot.learn.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -19,4 +18,36 @@ public class MyController {
     public ModelAndView index() {
         return new ModelAndView("index.html");
     }
+
+    @RequestMapping(value = "/rest",method = RequestMethod.GET)
+    @ResponseBody
+    public String getRest(){
+        return "get";
+    }
+
+    @RequestMapping(value = "/rest",method = RequestMethod.POST)
+    @ResponseBody
+    public String postRest(){
+        return "post";
+    }
+
+    @RequestMapping(value = "/rest",method = RequestMethod.DELETE)
+    @ResponseBody
+    public String getDelete(){
+        return "delete";
+    }
+
+    @RequestMapping(value = "/rest",method = RequestMethod.PUT)
+    @ResponseBody
+    public String putRest(){
+        return "put";
+    }
+
+    @RequestMapping("/body")
+    @ResponseBody
+    public String body(@RequestBody String content){
+        System.out.println(content);
+        return content;
+    }
+
 }

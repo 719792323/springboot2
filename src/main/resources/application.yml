@@ -4,6 +4,9 @@ person:
 
 spring:
   mvc:
-#      static-path-pattern: /res/**
+    hiddenmethod:
+      filter:
+        enabled: true
+  #      static-path-pattern: /res/**
   resources:
     static-locations:  [classpath:/static_html/,classpath:/static/]

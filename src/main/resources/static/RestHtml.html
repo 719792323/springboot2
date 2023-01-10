@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+      <form action="/rest" method="get">
+          <input type="submit" value="提交"/>
+      </form>
+
+        <form action="/rest" method="post">
+            <input type="submit" value="提交"/>
+        </form>
+        <form action="/rest" method="post">
+            <input name="_method" type="hidden" value="DELETE"/>
+            <input type="submit" value="提交"/>
+
+        </form>
+        <form action="/rest" method="post">
+            <input name="sj" type="hidden" value="PUT"/>
+            <input type="submit" value="提交"/>
+        </form>
+
+        <form action="/body" method="post">
+            <input name="k1" type="hidden" value="v1"/>
+            <input name="k2" type="hidden" value="v2"/>
+            <input type="submit" value="提交"/>
+        </form>
+    </body>
+</html>

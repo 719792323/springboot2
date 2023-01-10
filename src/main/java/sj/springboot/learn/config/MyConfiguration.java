@@ -3,12 +3,21 @@ package sj.springboot.learn.config;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.*;
+import org.springframework.web.filter.HiddenHttpMethodFilter;
 import sj.springboot.learn.properties.Address;
 
 @Import({MyBean.class})
 @Configuration(proxyBeanMethods = false)
 @ImportResource("classpath:beans.xml")
 public class MyConfiguration {
+
+    @Bean
+    public HiddenHttpMethodFilter hiddenHttpMethodFilter() {
+        HiddenHttpMethodFilter hiddenHttpMethodFilter = new HiddenHttpMethodFilter();
+        hiddenHttpMethodFilter.setMethodParam("sj");//进行自定义
+        return hiddenHttpMethodFilter;
+    }
+
     @Bean
     public MyBean myBean() {
         return new MyBean();
