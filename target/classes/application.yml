@@ -7,6 +7,9 @@ spring:
     hiddenmethod:
       filter:
         enabled: true
-  #      static-path-pattern: /res/**
+  # static-path-pattern: /res/**
+    contentnegotiation:
+      favor-parameter: true
+
   resources:
-    static-locations:  [classpath:/static_html/,classpath:/static/]
+    static-locations: [ classpath:/static_html/,classpath:/static/ ]
