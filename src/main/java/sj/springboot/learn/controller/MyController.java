@@ -1,16 +1,20 @@
 package sj.springboot.learn.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import sj.springboot.learn.bean.CalResult;
+import sj.springboot.learn.error.My404Exception;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Random;
+import java.util.Arrays;
 
 @Controller
+@Slf4j
 public class MyController {
 
     @ResponseBody
@@ -71,5 +75,25 @@ public class MyController {
         }
         return calResult;
     }
+
+
+    @PostMapping(value = "/upload")
+    @ResponseBody
+    public void upload(@RequestParam("id") Integer id,//除了文件参数还可以附带其他参数
+                       @RequestPart(value = "file", required = false) MultipartFile file,
+                       @RequestPart(value = "files", required = false) MultipartFile[] files
+    ) {
+        System.out.println(id);
+        System.out.println(file.getOriginalFilename());
+//        file.transferTo();使用transferTo可以将文件保存
+        Arrays.stream(files).forEach(f -> System.out.println(f.getOriginalFilename()));
+    }
+
+
+    @RequestMapping(value = "/errs")
+    public String error() {
+        throw new My404Exception();
+    }
+
 
 }
