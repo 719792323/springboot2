@@ -12,7 +12,6 @@ import sj.springboot.learn.error.My404Exception;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Arrays;
-import java.util.Random;
 
 @Controller
 @Slf4j
