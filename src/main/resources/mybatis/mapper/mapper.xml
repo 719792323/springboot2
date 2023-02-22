@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+<mapper namespace= //映射到的接口
+-->
+<mapper namespace="sj.springboot.learn.mybatis.dao.Dao">
+    <!--
+    select标签
+    id与接口方法名对应
+    resultType是实体Entity的路径，如果配置了type-aliases-package可以用省略写法
+    -->
+    <select id="getEntityById" resultType="Entity">
+        select *
+        from payment
+        where id = #{id}
+    </select>
+
+    <!-- insert标签说明
+    <insert 一个插入方法 id="create"  //映射到接口对应的方法名称
+      parameterType= //映射的entity全路径 注：如果在applicaiton.yml
+      配置了type-aliases-package，则parameterType也可以不用写全路径，直接写类名即可
+      useGeneratedKeys="true" //返回主键值
+      keyProperty="id" //设置主键名称
+      -->
+</mapper>

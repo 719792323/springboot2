@@ -1,4 +1,4 @@
-package sj.springboot.learn.config;
+package sj.springboot.learn.interceptor;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
