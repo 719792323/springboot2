@@ -15,10 +15,15 @@ spring:
     static-locations: [ classpath:/static_html/,classpath:/static/ ]
 
   datasource:
-    url: jdbc:mysql://192.168.0.44:3306/dbCloud?useUnicode=true&characterEncoding=utf-8&useSSL=true
+#    url: jdbc:mysql://192.168.0.44:3306/dbCloud?useUnicode=true&characterEncoding=utf-8&useSSL=true
+    url: jdbc:mysql://192.168.56.128:3306/dbCloud?useUnicode=true&characterEncoding=utf-8&useSSL=true
     password: 123456
     username: root
     driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: 192.168.56.128
+    password: 123456
+
 mybatis:
   #  如果需要以xml的方式配置mybatis，可以指定文件，通常在properties里配置，不在xml里配置
   #  config-location: classpath:mybatis/mybatis-config.xml
