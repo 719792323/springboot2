@@ -4,10 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
-import sj.springboot.learn.bean.LombokBean;
-
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import sj.springboot.learn.lombok.LombokBean;
 
 @ControllerAdvice
 @Slf4j

@@ -6,11 +6,9 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Data
+@ToString
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
-public class CalResult {
-    private Integer first;
-    private Integer second;
-    private Integer result;
+public class Dog {
+    private String name;
 }

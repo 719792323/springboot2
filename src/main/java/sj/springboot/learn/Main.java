@@ -5,10 +5,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.ConfigurableApplicationContext;
-import stream.MyStream;
+import sj.springboot.learn.bean.Dog;
 
-import java.io.BufferedInputStream;
 import java.io.IOException;
+import java.util.Arrays;
 
 
 //SpringBoot主程序注解（启动入口）
@@ -19,6 +19,9 @@ public class Main {
     public static void main(String[] args) throws IOException {
         //启动SpringBoot程序
         ConfigurableApplicationContext run = SpringApplication.run(Main.class, args);
-
+        String[] beanNamesForType = run.getBeanNamesForType(Dog.class);
+        Arrays.stream(beanNamesForType).forEach(System.out::println);
+        Dog dogC = run.getBean("dogC", Dog.class);
+        System.out.println(dogC);
     }
 }

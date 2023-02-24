@@ -1,4 +1,4 @@
-package sj.springboot.learn.bean;
+package sj.springboot.learn.lombok;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
